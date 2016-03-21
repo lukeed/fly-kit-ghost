@@ -7,7 +7,6 @@ git:
 branches:
   only:
     - master
-    - stable
     - develop
 
 node_js:
@@ -16,8 +15,7 @@ node_js:
   - '0.12'
 
 install:
-  - npm install xo
+  - npm install fly fly-xo
 
 script:
-  - echo No build task needed.
   - npm test
