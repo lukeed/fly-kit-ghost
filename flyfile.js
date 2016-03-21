@@ -68,7 +68,7 @@ exports.clean = function * () {
 exports.lint = function * () {
 	/** @desc Lint javascript files */
 	yield this.source(src.scripts).xo({
-		globals: ['navigator', 'window', 'jQuery'],
+		globals: ['navigator', 'window', '$', 'document'],
 		ignore: [src.vendor]
 	});
 };
@@ -110,7 +110,7 @@ exports.vendor = function * () {
 exports.scripts = function * () {
 	/** @desc Compile javascript files with Browserify. Will run `uglify` during `build` task.  */
 	yield this
-		.source('app/scripts/app.js')
+		.source('src/scripts/app.js')
 		.browserify({
 			transform: require('babelify').configure({presets: 'es2015'})
 		})
