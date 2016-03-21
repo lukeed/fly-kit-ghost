@@ -141,8 +141,11 @@ exports.uglify = function * () {
 exports.styles = function * () {
 	/** @desc Compile and prefix stylesheets with vendor properties */
 	yield this
-		.source(src.styles)
-		.sass({outputStyle: 'compressed'})
+		.source('src/styles/app.scss')
+		.sass({
+			outputStyle: 'compressed',
+			includePaths: ['src/styles']
+		})
 		.autoprefixer({
 			browsers: [
 				'ie >= 10',
