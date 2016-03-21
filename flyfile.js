@@ -58,9 +58,11 @@ exports.clean = function * () {
 	/** @desc Delete all built files in the root directory */
 	yield this.clear([
 		assets,
-		dest + 'partials',
-		'./*.{txt,ico,hbs}',
-		'./manifest.*'
+		dest + '/partials/*.hbs',
+		dest + '/*.{txt,ico,hbs}',
+		dest + '/service-worker.js',
+		dest + '/manifest.*',
+		dest + '/sw'
 	]);
 };
 
