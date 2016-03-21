@@ -59,7 +59,6 @@
     "fly-precache": "^1.0.0",
     "fly-sass": "^0.3.0",
     "fly-uglify": "^1.0.0",
-    "fly-xo": "^1.0.0",
-    "xo": "*"
+    "fly-xo": "^1.0.0"
   }
 }
