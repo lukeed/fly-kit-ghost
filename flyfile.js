@@ -164,11 +164,12 @@ exports.styles = function * () {
 
 exports.cache = function * () {
 	/** @desc Cache assets so they are available offline! */
-	yield this
-		.source(dest + '/**/*.{js,css,png,jpg,gif}')
+	yield this.source([
+			assets + '/**/*', // cache all assets
+		])
 		.precache({
 			root: dest,
-			cacheId: 'fly-starter-kit',
+			cacheId: 'fly-kit-ghost',
 			stripPrefix: dest
 		});
 };
