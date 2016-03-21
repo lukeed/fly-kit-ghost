@@ -47,7 +47,6 @@ exports.build = function * () {
 	yield this.start('clean');
 	yield this.start(['lint', 'fonts', 'views', 'extras']);
 	yield this.start(['images', 'vendor', 'styles', 'scripts']);
-	yield this.start('rev');
 	yield this.start('cache');
 };
 
@@ -92,7 +91,9 @@ exports.fonts = function * () {
 exports.views = function * () {
 	/** @desc Copy all HTML files to `dist`. Will run `htmlmin` during `build` task. */
 	yield this.source(src.views).target(dest);
-	return isProd ? yield this.start('htmlmin') : reload();
+	if (isProd) {
+		return reload();
+	}
 };
 
 exports.extras = function * () {
@@ -159,18 +160,6 @@ exports.styles = function * () {
 		.target(assets + '/css');
 
 	reload();
-};
-
-exports.rev = function * () {
-	/** @desc Version/Hashify production assets. (Cache-Busting) */
-	var src = ['/css', '/js'].map(function (dir) {
-		return assets + dir + '/**/*.*';
-	});
-
-	return this.source(src).rev({
-		base: dest,
-		replace: true
-	});
 };
 
 exports.cache = function * () {
