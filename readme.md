@@ -1,20 +1,26 @@
-# Fly Web Starter Kit [![Build Status](https://travis-ci.org/lukeed/fly-kit-web.svg?branch=master)](https://travis-ci.org/lukeed/fly-kit-web)
+# Fly Kit: Ghost Theme [![Build Status](https://travis-ci.org/lukeed/fly-kit-web.svg?branch=master)](https://travis-ci.org/lukeed/fly-kit-web)
 
-> Starter Kit for scaffolding a Web App with [Fly](https://git.io/fly) as the task runner.
+> A Ghost starter kit built with Fly for AMAZINGLY FAST development!
 
 ## Install
-### [Yeoman](http://yeoman.io)
-If you are looking for speed, convenience, and automation, there is a [Yeoman generator](https://github.com/lukeed/generator-fly-starter) generator to help you get started with Fly.
 
-### Manually
-```
-$ git clone --depth=1 https://github.com/lukeed/fly-kit-web.git
-$ cd fly-kit-web
-$ rm -rf .git && git init
-$ npm install
+(Yeoman generator coming soon!)
+
+```bash
+cd path/to/ghost/content/themes
+git clone --depth=1 https://github.com/lukeed/fly-kit-ghost.git theme-name
+cd theme-name
+rm -rf .git && git init 
+npm install
 ```
 
 You now have a fresh copy of this repo.
+
+#### Important!
+
+You will then need to update the `name` and `version` of your `package.json` file. Your theme's `name` _should_ match the directory's name.
+
+If your development URL is **not** `http://localhost:2368`, you will need to update the `proxy` variable at the top of the `flyfile.js`.
 
 ## Usage
 
@@ -38,21 +44,16 @@ npm run build
 npm run serve
 ```
 
-**Test** -- Run tests (todo)
-```
-# todo
-```
-
 ## Features
 * Asset Versioning
-* BrowserSync
-* Browserify (Common JS)
+* Babel (for ES6 and ES7 support)
+* Browserify Bundles (Common JS)
+* BrowserSync (Live-Reload)
 * CSS Autoprefixer
-* ES5, ES6, and ES7 support via Babel
-* ESLint 
+* Javascript Linting via [XO](https://github.com/sindresorhus/xo), supports ES6 and ES7
 * HTML Minification
-* **Offline** Caching (Service Worker)
-* SASS pre-processor
+* **Offline Support** (Service Worker Caching)
+* SASS
 * Uglify JS
 
 ## License
