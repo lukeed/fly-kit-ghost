@@ -1,7 +1,7 @@
 {
   "name": "fly-kit-ghost",
   "version": "0.0.0",
-  "description": "Starter Kit for scaffolding a ghost App with Fly",
+  "description": "A Ghost starter kit built with Fly for amazingly FAST development!",
   "license": "MIT",
   "repository": "lukeed/fly-kit-ghost",
   "author": {
@@ -36,6 +36,7 @@
     "worker",
     "webapp",
     "ghost",
+    "theme",
     "cache",
     "sync",
     "sass",
@@ -62,11 +63,5 @@
     "fly-uglify": "^1.0.0",
     "fly-xo": "^1.0.0",
     "xo": "*"
-  },
-  "xo": {
-    "globals": [
-      "window",
-      "navigator"
-    ]
   }
 }

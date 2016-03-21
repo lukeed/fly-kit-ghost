@@ -7,8 +7,8 @@
 
 # THANKS
 
-  <name>
+  Luke Edwards (https://lukeed.com) @lukeed05
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3
+  Ghost, Fly task runner, Fly Kit: Ghost, HTML5, CSS3, ES6
