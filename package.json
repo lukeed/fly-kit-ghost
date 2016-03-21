@@ -1,7 +1,7 @@
 {
   "name": "fly-kit-ghost",
-  "version": "1.0.1",
-  "description": "A Ghost starter kit built with Fly for amazingly FAST development!",
+  "version": "1.0.2",
+  "description": "A Ghost theme starter kit built with Fly for amazingly FAST development!",
   "license": "MIT",
   "repository": "lukeed/fly-kit-ghost",
   "author": {
