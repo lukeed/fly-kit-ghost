@@ -1,6 +1,8 @@
 # Fly Kit: Ghost Theme [![Build Status](https://travis-ci.org/lukeed/fly-kit-web.svg?branch=master)](https://travis-ci.org/lukeed/fly-kit-web)
 
-> A Ghost starter kit built with Fly for AMAZINGLY FAST development!
+> A Ghost Theme starter kit built with Fly for AMAZINGLY FAST development!
+
+The starter pack will "rebuild" the [Casper theme](https://github.com/TryGhost/Casper) as a demo to help you get started.
 
 ## Install
 
