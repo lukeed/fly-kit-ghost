@@ -45,8 +45,8 @@ exports.build = function * () {
 	isWatch = false;
 
 	yield this.start('clean');
-	yield this.start(['lint', 'fonts', 'views', 'extras']);
-	yield this.start(['images', 'vendor', 'styles', 'scripts']);
+	yield this.start(['lint', 'fonts', 'views', 'extras', 'vendor']);
+	yield this.start(['images', 'styles', 'scripts']);
 	yield this.start('cache');
 };
 
