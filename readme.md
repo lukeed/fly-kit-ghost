@@ -45,13 +45,11 @@ npm run serve
 ```
 
 ## Features
-* Asset Versioning
 * Babel (for ES6 and ES7 support)
 * Browserify Bundles (Common JS)
 * BrowserSync (Live-Reload)
 * CSS Autoprefixer
 * Javascript Linting via [XO](https://github.com/sindresorhus/xo), supports ES6 and ES7
-* HTML Minification
 * **Offline Support** (Service Worker Caching)
 * SASS
 * Uglify JS
