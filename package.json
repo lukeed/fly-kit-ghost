@@ -1,0 +1,71 @@
+{
+  "name": "fly-kit-web",
+  "version": "1.1.1",
+  "description": "Starter Kit for scaffolding a Web App with Fly",
+  "license": "MIT",
+  "repository": "lukeed/fly-kit-web",
+  "author": {
+    "name": "Luke Edwards",
+    "email": "luke.edwards05@gmail.com",
+    "url": "https://lukeed.com"
+  },
+  "engines": {
+    "iojs": ">= 1.0.0",
+    "node": ">= 0.11.0"
+  },
+  "scripts": {
+    "build": "fly build",
+    "fly": "fly",
+    "serve": "fly build && fly serve",
+    "watch": "fly watch",
+    "test": "xo"
+  },
+  "keywords": [
+    "minification",
+    "boilerplate",
+    "autoprefix",
+    "versioning",
+    "busting",
+    "version",
+    "browser",
+    "starter",
+    "offline",
+    "service",
+    "eslint",
+    "minify",
+    "worker",
+    "webapp",
+    "cache",
+    "sync",
+    "sass",
+    "web",
+    "app",
+    "xo",
+    "css",
+    "kit",
+    "fly"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.10.0",
+    "fly": "^1.0.0",
+    "fly-autoprefixer": "^0.2.0",
+    "fly-browserify": "^1.0.0",
+    "fly-gzip": "0.0.0",
+    "fly-htmlmin": "^1.0.0",
+    "fly-precache": "^1.0.0",
+    "fly-rev": "^0.9.0",
+    "fly-sass": "^0.3.0",
+    "fly-uglify": "^1.0.0",
+    "fly-xo": "^1.0.0",
+    "xo": "*"
+  },
+  "xo": {
+    "globals": [
+      "window",
+      "navigator"
+    ]
+  }
+}

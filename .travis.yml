@@ -1,0 +1,23 @@
+sudo: false
+language: node_js
+
+git:
+  depth: 1
+
+branches:
+  only:
+    - master
+    - stable
+    - develop
+
+node_js:
+  - '5'
+  - '4'
+  - '0.12'
+
+install:
+  - npm install xo
+
+script:
+  - echo No build task needed.
+  - npm test
