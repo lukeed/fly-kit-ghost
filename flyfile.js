@@ -22,53 +22,14 @@ var paths = {
 		src: 'app/fonts/**/*.*',
 		dest: 'dist/fonts'
 	},
-	html: {
-		src: 'app/*.html',
+	views: {
+		src: 'app/*.hbs',
 		dest: 'dist'
 	},
 	extras: {
 		src: 'app/*.{txt,json,webapp,ico}',
 		dest: 'dist'
 	}
-};
-
-x.test = function * () {
-	var src = 'tmp/imba.js';
-	yield this.source(src)
-		.uglify({
-			compress: {
-				conditionals: true,
-				comparisons: true,
-				booleans: true,
-				loops: true,
-				/* eslint camelcase: 0 */
-				join_vars: true,
-				drop_console: true
-			}
-		}).concat('imba.min.js').target('tmp');
-
-	yield this.source(src).gzip().target('tmp');
-
-	yield this.source(src).gzip({
-		extension: '.gzip',
-		options: {level: 9}
-	}).target('tmp');
-
-	yield this.source(src)
-		.uglify({
-			compress: {
-				conditionals: true,
-				comparisons: true,
-				booleans: true,
-				loops: true,
-				/* eslint camelcase: 0 */
-				join_vars: true,
-				drop_console: true
-			}
-		}).gzip({
-			extension: '.full',
-			options: {level: 9}
-		}).target('tmp');
 };
 
 x.default = function * () {
@@ -86,7 +47,7 @@ x.watch = function * () {
 	yield this.watch(paths.styles.src, 'styles');
 	yield this.watch(paths.images.src, 'images');
 	yield this.watch(paths.fonts.src, 'fonts');
-	yield this.watch(paths.html.src, 'html');
+	yield this.watch(paths.views.src, 'views');
 	yield this.start('extras');
 	yield this.start('serve');
 };
@@ -97,7 +58,7 @@ x.build = function * () {
 	isWatch = false;
 
 	yield this.start('clean');
-	yield this.start(['lint', 'fonts', 'html', 'extras']);
+	yield this.start(['lint', 'fonts', 'views', 'extras']);
 	yield this.start(['images', 'styles', 'scripts']);
 	yield this.start('rev');
 	yield this.start('cache');
@@ -134,27 +95,10 @@ x.fonts = function * () {
 	reload();
 };
 
-x.html = function * () {
+x.views = function * () {
 	/** @desc Copy all HTML files to `dist`. Will run `htmlmin` during `build` task. */
-	yield this.source(paths.html.src).target(paths.html.dest);
+	yield this.source(paths.views.src).target(paths.views.dest);
 	return isProd ? yield this.start('htmlmin') : reload();
-};
-
-x.htmlmin = function * () {
-	/** @desc Minify all HTML files already within `dist`. Production only */
-	yield this.source(paths.html.dest + '/*.html')
-		.htmlmin({
-			removeComments: true,
-			collapseWhitespace: true,
-			collapseBooleanAttributes: true,
-			removeAttributeQuotes: true,
-			removeRedundantAttributes: true,
-			removeEmptyAttributes: true,
-			removeScriptTypeAttributes: true,
-			removeStyleLinkTypeAttributes: true,
-			removeOptionalTags: true
-		})
-		.target(paths.html.dest);
 };
 
 x.extras = function * () {
@@ -223,17 +167,17 @@ x.rev = function * () {
 	});
 
 	return this.source(src).rev({
-		base: paths.html.dest,
+		base: paths.views.dest,
 		replace: true
 	});
 };
 
 x.cache = function * () {
 	/** @desc Cache assets so they are available offline! */
-	var dir = paths.html.dest;
+	var dir = paths.views.dest;
 
 	yield this
-		.source(dir + '/**/*.{js,html,css,png,jpg,gif}')
+		.source(dir + '/**/*.{js,hbs,css,png,jpg,gif}')
 		.precache({
 			root: dir,
 			cacheId: 'fly-starter-kit',
