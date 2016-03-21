@@ -60,7 +60,8 @@ exports.clean = function * () {
 	yield this.clear([
 		assets,
 		dest + 'partials',
-		'*.{txt,json,webapp,ico,hbs}'
+		'./*.{txt,ico,hbs}',
+		'./manifest.*'
 	]);
 };
 
