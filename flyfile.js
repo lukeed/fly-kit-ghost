@@ -1,8 +1,8 @@
 var browserSync = require('browser-sync');
 var proxy = 'http://localhost:2368';
 
-var dest = './';
-var assets = dest + 'assets';
+var dest = process.cwd();
+var assets = dest + '/assets';
 
 var isProd = false;
 var isWatch = false;
