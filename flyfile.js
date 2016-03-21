@@ -93,9 +93,7 @@ exports.fonts = function * () {
 exports.views = function * () {
 	/** @desc Copy all HTML files to `dist`. Will run `htmlmin` during `build` task. */
 	yield this.source(src.views).target(dest);
-	if (isProd) {
-		return reload();
-	}
+	reload();
 };
 
 exports.extras = function * () {
