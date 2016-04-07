@@ -47,7 +47,6 @@ exports.build = function * () {
 	yield this.start('clean');
 	yield this.start(['lint', 'fonts', 'views', 'extras', 'vendor']);
 	yield this.start(['images', 'styles', 'scripts']);
-	yield this.start('cache');
 };
 
 // ###
@@ -163,18 +162,6 @@ exports.styles = function * () {
 		.target(assets + '/css');
 
 	reload();
-};
-
-exports.cache = function * () {
-	/** @desc Cache assets so they are available offline! */
-	yield this.source([
-			assets + '/**/*', // cache all assets
-		])
-		.precache({
-			root: dest,
-			cacheId: 'fly-kit-ghost',
-			stripPrefix: dest
-		});
 };
 
 exports.serve = function * () {

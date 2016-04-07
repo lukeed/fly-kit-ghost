@@ -52,7 +52,6 @@ npm run serve
 * BrowserSync (Live-Reload)
 * CSS Autoprefixer
 * Javascript Linting via [XO](https://github.com/sindresorhus/xo), supports ES6 and ES7
-* **Offline Support** (Service Worker Caching)
 * SASS
 * Uglify JS
 
