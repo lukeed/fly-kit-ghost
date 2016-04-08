@@ -1,7 +1,7 @@
 var browserSync = require('browser-sync');
 var proxy = 'http://localhost:2368';
 
-var dest = process.cwd();
+var dest = 'dist';
 var assets = dest + '/assets';
 
 var isProd = false;
@@ -55,14 +55,7 @@ exports.build = function * () {
 
 exports.clean = function * () {
 	/** @desc Delete all built files in the root directory */
-	yield this.clear([
-		assets,
-		dest + '/partials/*.hbs',
-		dest + '/*.{txt,ico,hbs}',
-		dest + '/service-worker.js',
-		dest + '/manifest.*',
-		dest + '/sw'
-	]);
+	yield this.clear(dest);
 };
 
 exports.lint = function * () {
