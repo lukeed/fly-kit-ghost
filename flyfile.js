@@ -157,6 +157,15 @@ exports.styles = function * () {
 	reload();
 };
 
+exports.zip = function * () {
+	/** @desc Create a ZIP archive with built assets. */
+	yield this.source(dest + '/**/*')
+		.zip({
+			base: dest,
+			filename: 'theme.zip'
+		});
+};
+
 exports.serve = function * () {
 	/** @desc Launch a local server from the `dist` directory. */
 	isServer = true;

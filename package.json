@@ -17,6 +17,7 @@
     "build": "fly build",
     "fly": "fly",
     "serve": "fly build && fly serve",
+    "zip": "fly build zip",
     "watch": "fly watch",
     "test": "fly lint"
   },
@@ -57,6 +58,7 @@
     "fly-browserify": "^1.0.0",
     "fly-sass": "^0.3.0",
     "fly-uglify": "^1.0.0",
-    "fly-xo": "^1.0.0"
+    "fly-xo": "^1.0.0",
+    "fly-zip": "^1.0.0"
   }
 }

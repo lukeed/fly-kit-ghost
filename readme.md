@@ -41,6 +41,11 @@ npm run watch
 npm run build
 ```
 
+**Zip** -- create a ZIP archive from built assets
+```
+npm run zip
+```
+
 **Serve** -- build production-ready assets & start a server
 ```
 npm run serve
